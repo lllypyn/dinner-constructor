@@ -19,7 +19,6 @@ public class DinnerConstructor {
     }
 
     void generationOfCombination(ArrayList<String> list, int amount){
-
         String type;
         String item;
 
@@ -39,17 +38,7 @@ public class DinnerConstructor {
             }
             System.out.println("комбо № " + (i+1));
             System.out.println(listDish);
-            /*for (PositionOfCombo positionOfCombo : listDish) {
-                System.out.print(positionOfCombo.type + " : " + positionOfCombo.item + " ");
-            }*/
-
             System.out.println();
-
-
         }
-
-
     }
-
-
 }
