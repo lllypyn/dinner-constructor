@@ -55,7 +55,12 @@ public class Main {
         String nextItem = scanner.nextLine();
 
         while (!nextItem.isEmpty()) {
-            types.add(nextItem);
+            boolean chek = dc.menu.containsKey(nextItem);
+            if (chek) {
+                types.add(nextItem);
+            }else{
+                System.out.println("такого типа блюд нет, попробуйте ввести другое");
+            }
             nextItem = scanner.nextLine();
         }
         dc.generationOfCombination(types,numberOfCombos);

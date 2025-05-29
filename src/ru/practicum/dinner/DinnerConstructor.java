@@ -9,9 +9,9 @@ public class DinnerConstructor {
     HashMap<String, ArrayList<String>> menu = new HashMap<>();
 
     void addDish(String type, String dish) { // добавляем новое блюдо в меню
-        if (menu.containsKey(type)){
-            menu.get(type).add(dish);
-        }else {
+        if (menu.containsKey(type)){ // проверили наличие
+            menu.get(type).add(dish);  // добавили
+        }else { // если нет - создаем новый список и добавляем его в хэш таблицу
             ArrayList<String> newDish = new ArrayList<>();
             newDish.add(dish);
             menu.put(type, newDish);
@@ -23,18 +23,13 @@ public class DinnerConstructor {
         String item;
 
         for (int i = 0; i < amount; i++) {
-            ArrayList<String> listDish = new ArrayList<>();
+            ArrayList<String> listDish = new ArrayList<>(); // создали список
 
             for (String s : list) {
                 type = s;
-                boolean avail = menu.containsKey(type);
-                if (avail) {
-                    int number = random.nextInt(menu.get(type).size());
-                    item = menu.get(type).get(number);
-                    listDish.add(item);
-                } else {
-                    System.out.println("К сожалению категории " + type + " в нашем меню нет");
-                }
+                int number = random.nextInt(menu.get(type).size()); // назначаем случайное число
+                item = menu.get(type).get(number); // назначили блюдо
+                listDish.add(item); // передали в список
             }
             System.out.println("комбо № " + (i+1));
             System.out.println(listDish);
